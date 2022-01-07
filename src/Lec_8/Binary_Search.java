@@ -40,7 +40,7 @@ public class Binary_Search {
         int e = n;
         int ans = n;
         while (s <= e) {
-            int mid = s - (s - e) / 2;
+            int mid = s + (e - s) / 2;
             if (isBadVersion(mid)) {
                 e = mid - 1;
                 ans = mid;
