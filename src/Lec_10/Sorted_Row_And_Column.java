@@ -6,6 +6,7 @@ public class Sorted_Row_And_Column {
                 {15, 25, 35, 45},
                 {27, 28, 37, 48},
                 {29, 33, 39, 50}};
+        Search(arr, 5);
     }
 
     public static void Search(int[][] arr, int key) {
