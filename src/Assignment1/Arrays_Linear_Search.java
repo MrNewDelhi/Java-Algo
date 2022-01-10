@@ -1,6 +1,5 @@
 package Assignment1;
 
-import javax.sound.sampled.Line;
 import java.util.Scanner;
 
 public class Arrays_Linear_Search {
