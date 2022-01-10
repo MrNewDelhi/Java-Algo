@@ -33,7 +33,7 @@ public class Sorting_In_Linear_Time {
             i++;
         }
         for(int j = 0; j < size; j++){
-            System.out.println(result[j]);
+            System.out.print(result[j] + " ");
         }
     }
 }
