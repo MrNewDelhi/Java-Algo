@@ -2,10 +2,10 @@ package Lec_2;
 
 public class Prime {
     public static void main(String[] args) {
-        int num = 15;
+        int num = 6;
         int n = 2;
         int factors = 1;
-        while(n <= num - 1){
+        while(n <= num){
 //            System.out.println(n);
 //            check if n is a factor of num!!
             if(num % n == 0){
