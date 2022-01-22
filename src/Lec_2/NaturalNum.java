@@ -1,6 +1,6 @@
 package Lec_2;
 import java.util.*;
-public class NaturalSum {
+public class NaturalNum {
     public static void main(String[] args) {
         int n = 1;
         while(n<=10){
