@@ -4,10 +4,10 @@ public class Max_Sub_Array_Sum {
     public static void main(String[] args) {
         int[] arr = {30, -99, 1, 25, 20, -30, -9, 4, 50};
         Max_SubArray_Sum(arr);
-        Kadance_Algorithm(arr);
+        Kadane_Algorithm(arr);
     }
 
-    public static void Kadance_Algorithm(int[] arr){
+    public static void Kadane_Algorithm(int[] arr){
         int sum = 0;
         int max_sum = 0;
         for (int i : arr) {
