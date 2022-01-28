@@ -6,43 +6,33 @@ public class Increasing_Decreasing_Sequence {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
-        int num1 = sc.nextInt();
+        boolean isIncDec = true;
         if(size == 1){
-            System.out.print("false");
-        } else {
-            int num2 = sc.nextInt();
-            int ans = 1;
-            if(isIncreasingOrDecreasing(num1,num2) == 1){
-                for(int i = 0; i < size - 2; i++){
-                    num1 = num2;
-                    num2 = sc.nextInt();
-                    if(isIncreasingOrDecreasing(num1,num2) == 0){
-                        ans = 0;
-                        break;
+            isIncDec = false;
+        }
+        else {
+            int current = sc.nextInt();
+            int next = sc.nextInt();
+            if (current < next) {
+                for (int i = 2; i < size; i++) {
+                    current = next;
+                    next = sc.nextInt();
+                    if (current > next) {
+                        isIncDec = false;
                     }
                 }
-            }
-            else{
-                for(int i = 0; i < size - 2; i++){
-                    num1 = num2;
-                    num2 = sc.nextInt();
-                    if(isIncreasingOrDecreasing(num1,num2) == 1){
-                        ans = 0;
-                        break;
+            } else if (current > next) {
+                for (int i = 2; i < size; i++) {
+                    current = next;
+                    next = sc.nextInt();
+                    if (current < next) {
+                        isIncDec = false;
                     }
                 }
+            } else {
+                isIncDec = false;
             }
-            if(ans == 1){
-                System.out.print("true");
-            }
         }
-    }
-    public static int isIncreasingOrDecreasing(int num1, int num2){
-        if(num1 > num2){
-            return 1;
-        }
-        else{
-            return 0;
-        }
+        System.out.println(isIncDec);
     }
 }
