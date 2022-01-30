@@ -7,17 +7,22 @@ public class Increasing_Decreasing_Sequence {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         boolean isIncDec = true;
+        boolean isInc = true;
+        boolean isDec = true;
+        int current = sc.nextInt();
         if(size == 1){
             isIncDec = false;
         }
         else {
-            int current = sc.nextInt();
             int next = sc.nextInt();
             if (current < next) {
                 for (int i = 2; i < size; i++) {
                     current = next;
                     next = sc.nextInt();
-                    if (current > next) {
+                    if (isInc && current > next) {
+                        isInc = false;
+                    }
+                    else if (isDec && current < next){
                         isIncDec = false;
                     }
                 }
