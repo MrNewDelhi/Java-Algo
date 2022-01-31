@@ -2,6 +2,7 @@ package Lec_14;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class AL_demo2 {
@@ -41,5 +42,14 @@ public class AL_demo2 {
 
         int removedElement = AL.remove(0);
         System.out.println(removedElement);
+
+        for(int e: AL){
+            System.out.println(e + "-");
+        }
+        System.out.println();
+
+        //reverse
+        Collections.reverse(AL);
+        System.out.println(AL);
     }
 }
