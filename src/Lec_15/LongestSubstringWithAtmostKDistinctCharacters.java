@@ -7,36 +7,34 @@ public class LongestSubstringWithAtmostKDistinctCharacters {
         Scanner sc = new Scanner(System.in);
         int k = sc.nextInt();
         String str = sc.next();
-        System.out.println(Substring(str, k));
+        Substring(str, k);
     }
-    public static int Substring(String str, int distinct){
-        int[] arr = new int[26];
-        int i = 0;
-        int maxLength = 0;
-        int k = 0;
-        int j = 0;
-        while(i < str.length()){
-          char end = str.charAt(i);
-          arr[end - 'a'] += 1;
-          if(arr[end - 'a'] == 1){
-              if(k < distinct) {
-                  k++;
-              }
-              else{
-                  char start = str.charAt(j);
-                  arr[start - 'a'] -= 1;
-                  if(arr[start - 'a'] == 0 && k > distinct){
-                      k--;
-                  }
-                  j++;
-              }
-          }
-          int length = str.substring(j, i+1).length();
-          if (maxLength < length){
-              maxLength = length;
-          }
-          i++;
+    public static void Substring(String str, int distinct){
+        int[] batua = new int[26];
+        int s = 0;
+        int e = 0;
+        int score = 0;
+        int ans = 0;
+        while(e < str.length()){
+            if(score <= distinct){
+                char ch = str.charAt(e);
+                if(batua[ch-'a']==0){
+                    score++;
+                }
+                batua[ch-'a']++;
+                e++;
+            } else {
+                char ch = str.charAt(s);
+                if(batua[ch-'a']==1){
+                    score--;
+                }
+                batua[ch-'a']--;
+                s++;
+            }
+            if(score <= distinct){
+                System.out.println(str.substring(s,e) + " = " + score + "{" + s + "," + e +"}");
+                ans = Math.max(e-s,ans);
+            }
         }
-        return maxLength;
     }
 }
