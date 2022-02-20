@@ -2,14 +2,15 @@ package Lec_16;
 
 public class FibonacciRecursive {
     public static void main(String[] args) {
-        int n = 5;
-
+        int n = 4;
+        System.out.println(fibRec(n));
     }
     public static int fibRec(int n){
-        if(n == 0 || n == -1 ){
-            return 0;
+        if(n <= 1){
+            return n;
         }
-        int sp = fibRec(n-1) + fibRec(n-2);
-        return n + sp;
+        int sp1 = fibRec(n-1);
+        int sp2 = fibRec(n-2);
+        return sp1 + sp2;
     }
 }
